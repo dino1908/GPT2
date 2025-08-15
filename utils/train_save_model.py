@@ -1,10 +1,10 @@
 import torch
 import tiktoken
 import time
-from GPT_CONFIG import GPT_CONFIG
-from GPT_Model_Class import GPTModel
-from Data_Loader_class import create_dataloader_v1
-from helper_functions import calc_loss_loader, generate, text_to_token_ids, token_ids_to_text
+from transformer_model.GPT_CONFIG import GPT_CONFIG
+from transformer_model.GPT_Model import GPTModel
+from utils.Data_Loader import create_dataloader_v1
+from utils.helper_functions import generate, text_to_token_ids, token_ids_to_text
 from model_trainer_functions import train_model_simple
 
 #Device agnostic code

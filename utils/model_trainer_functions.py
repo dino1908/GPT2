@@ -1,6 +1,5 @@
 import torch
-from torch import nn
-from helper_functions import calc_loss_batch, calc_loss_loader, generate, text_to_token_ids, token_ids_to_text
+from utils.helper_functions import calc_loss_batch, calc_loss_loader, generate, text_to_token_ids, token_ids_to_text
 
 def train_model_simple(model, train_dataloader, val_dataloader, num_epochs, optimizer, 
                     tokenizer, eval_freq, eval_iter, start_context, device):
