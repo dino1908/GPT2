@@ -6,5 +6,5 @@ GPT_CONFIG = {
     "n_layers": 12,
     "drop_rate": 0.1,
     "qkv_bias": False,
-    "attention_type": "flash"
+    "attention_type": "flash_v2"
 }

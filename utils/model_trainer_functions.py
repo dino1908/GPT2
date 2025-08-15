@@ -31,6 +31,9 @@ def train_model_simple(model, train_dataloader, val_dataloader, num_epochs, opti
             model, tokenizer, device, start_context
         )
 
+        if device=="cuda" and epoch==5:
+            print(torch.cuda.memory_summary(device=device, abbreviated=True))
+
     return train_losses, val_losses, track_tokens_seen
 
 def evaluate_model(model, train_loader, val_loader, device, eval_iter):
