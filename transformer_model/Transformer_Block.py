@@ -21,10 +21,9 @@ class TransformerBlock(nn.Module):
         self.norm1 = LayerNorm(cfg["emb_dim"])
         self.norm2 = LayerNorm(cfg["emb_dim"])
         self.drop_resid = nn.Dropout(cfg["drop_rate"])
-        print(f"Using {self.attention_type} attention")
+        
 
     def forward(self, x):
-        #print(f"Using {self.attention_type} attention")
         shortcut = x
         x = self.norm1(x)
         x = self.attn(x)
