@@ -39,3 +39,5 @@ class FlashAttention(nn.Module):
         context_vec = self.out_proj(context_vec)
 
         return context_vec
+    
+#print("Flash Attention class success!")

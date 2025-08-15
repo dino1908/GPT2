@@ -6,10 +6,10 @@ from .Layer_Norm import LayerNorm
 
 
 class TransformerBlock(nn.Module):
-    def __init__(self, cfg, attention_type="multihead"):
+    def __init__(self, cfg):
         super().__init__()
-        self.attention_type = attention_type
-        self.attn = AttentionFactory.get_attention(attention_type)(
+        self.attention_type = cfg["attention_type"]
+        self.attn = AttentionFactory.get_attention(cfg["attention_type"])(
             d_in=cfg["emb_dim"],
             d_out=cfg["emb_dim"],
             context_length=cfg["context_length"],
@@ -21,8 +21,10 @@ class TransformerBlock(nn.Module):
         self.norm1 = LayerNorm(cfg["emb_dim"])
         self.norm2 = LayerNorm(cfg["emb_dim"])
         self.drop_resid = nn.Dropout(cfg["drop_rate"])
+        print(f"Using {self.attention_type} attention")
 
     def forward(self, x):
+        #print(f"Using {self.attention_type} attention")
         shortcut = x
         x = self.norm1(x)
         x = self.attn(x)
