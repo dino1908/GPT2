@@ -1,7 +1,8 @@
 from torch import nn
 from utils.AttentionFactory import AttentionFactory
-from Feed_Forward import FeedForward
-from Layer_Norm import LayerNorm
+from .Feed_Forward import FeedForward
+from .Layer_Norm import LayerNorm
+
 
 
 class TransformerBlock(nn.Module):

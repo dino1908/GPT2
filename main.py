@@ -1,3 +1,6 @@
+import os 
+print(os.getcwd())
+
 import torch
 import tiktoken
 import time
@@ -5,7 +8,7 @@ from transformer_model.GPT_CONFIG import GPT_CONFIG
 from transformer_model.GPT_Model import GPTModel
 from utils.Data_Loader import create_dataloader_v1
 from utils.helper_functions import generate, text_to_token_ids, token_ids_to_text
-from model_trainer_functions import train_model_simple
+from utils.model_trainer_functions import train_model_simple
 
 #Device agnostic code
 device = "cuda" if torch.cuda.is_available() else "cpu"
