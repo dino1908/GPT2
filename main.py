@@ -62,6 +62,7 @@ device = device
 model = GPTModel(GPT_CONFIG)
 model.to(device)
 optimizer = torch.optim.AdamW(model.parameters(), lr=0.0004, weight_decay=0.1)
+print(f"Using {GPT_CONFIG['attention_type']} Attention")
 
 num_epochs = 10
 train_losses, val_losses, tokens_seen = train_model_simple(
